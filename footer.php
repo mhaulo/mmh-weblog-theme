@@ -6,28 +6,14 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package Future_Imperfect
+ * @package mmh_weblog
  */
 
 ?>
 	</div> <!-- row -->
 
 	<footer id="colophon" class="site-footer container-fluid" role="contentinfo">
-		<div class="row hidden-md hidden-lg">
-			<div class="col-xs-12 col-sm-4 col-md-4">
-				<?php dynamic_sidebar("footer-1"); ?>
-			</div>
-			
-			<div class="col-xs-12 col-sm-4 col-md-4">
-				<?php dynamic_sidebar("footer-2"); ?>
-			</div>
-			
-			<div class="col-xs-12 col-sm-4 col-md-4">
-				<?php dynamic_sidebar("footer-3"); ?>
-			</div>
-			
-			
-		</div>
+		© 2017
 	</footer><!-- #colophon -->
 </div><!-- #page -->
 

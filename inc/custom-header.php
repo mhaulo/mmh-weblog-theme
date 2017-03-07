@@ -12,33 +12,33 @@
  *
  * @link https://developer.wordpress.org/themes/functionality/custom-headers/
  *
- * @package Future_Imperfect
+ * @package mmh_weblog
  */
 
 /**
  * Set up the WordPress core custom header feature.
  *
- * @uses future_imperfect_header_style()
+ * @uses mmh_weblog_header_style()
  */
-function future_imperfect_custom_header_setup() {
-	add_theme_support( 'custom-header', apply_filters( 'future_imperfect_custom_header_args', array(
+function mmh_weblog_custom_header_setup() {
+	add_theme_support( 'custom-header', apply_filters( 'mmh_weblog_custom_header_args', array(
 		'default-image'          => '',
 		'default-text-color'     => 'ffffff',
 		'width'                  => 1000,
 		'height'                 => 300,
 		'flex-height'            => true,
-		'wp-head-callback'       => 'future_imperfect_header_style',
+		'wp-head-callback'       => 'mmh_weblog_header_style',
 	) ) );
 }
-add_action( 'after_setup_theme', 'future_imperfect_custom_header_setup' );
+add_action( 'after_setup_theme', 'mmh_weblog_custom_header_setup' );
 
-if ( ! function_exists( 'future_imperfect_header_style' ) ) :
+if ( ! function_exists( 'mmh_weblog_header_style' ) ) :
 /**
  * Styles the header image and text displayed on the blog.
  *
- * @see future_imperfect_custom_header_setup().
+ * @see mmh_weblog_custom_header_setup().
  */
-function future_imperfect_header_style() {
+function mmh_weblog_header_style() {
 	$header_text_color = get_header_textcolor();
 
 	/*

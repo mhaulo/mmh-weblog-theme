@@ -35,42 +35,5 @@
 
 <body <?php body_class(); ?>>
 <div id="page" class="site container-fluid no-padding">
-	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'future-imperfect' ); ?></a>
-
-	<div class="row no-margin">
-		<div class="col-xs-12 col-lg-3 site-header">
-			<header id="masthead" role="banner">
-				<div class="site-branding">
-					<div class="site-avatar">
-						<?php if (get_header_image() != ""): ?>
-							<img src="<?php header_image(); ?>" height="<?php echo get_custom_header()->height; ?>" width="<?php echo get_custom_header()->width; ?>" alt="" / class="hidden-xs hidden-sm">
-						<?php endif; ?>
-					</div>
-					<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-					
-					<?php
-
-					$description = get_bloginfo( 'description', 'display' );
-					if ( $description || is_customize_preview() ) : ?>
-						<p class="site-description"><?php echo $description; /* WPCS: xss ok. */ ?></p>
-					<?php
-					endif; ?>
-				</div><!-- .site-branding -->
-
-				<nav id="site-navigation" class="main-navigation" role="navigation">
-					<button class="btn btn-link menu-toggle" aria-controls="primary-menu" aria-expanded="false"><i class="fa fa-navicon"></i></button>
-					<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu', 'container_class' => "primary-menu", 'fallback_cb' => false ) ); ?>
-				</nav><!-- #site-navigation -->
-				
-				<div class="">
-					<?php get_sidebar("sidebar-1"); ?>
-				</div>
-				
-				<div class="site-info hidden-xs hidden-sm">
-					<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'future-imperfect' ) ); ?>"><?php printf( esc_html__( 'Proudly powered by %s', 'future-imperfect' ), 'WordPress' ); ?></a>
-					<span class="sep"> | </span>
-					<?php printf( esc_html__( 'Theme: %1$s by %2$s.', 'future-imperfect' ), 'future-imperfect', '<a href="http://haulo.fi" rel="designer">Mika Haulo</a>' ); ?>
-				</div><!-- .site-info -->
-			</header><!-- #masthead -->
-		</div>
+	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'mmh-weblog' ); ?></a>
 

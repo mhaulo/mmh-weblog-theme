@@ -1,5 +1,5 @@
 /*
-Theme Name: Future Imperfect
+Theme Name: mmh_weblog
 Theme URI: http://underscores.me/
 Author: Underscores.me
 Author URI: http://underscores.me/
@@ -13,7 +13,7 @@ Tags:
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
 
-Future Imperfect is based on Underscores http://underscores.me/, (C) 2012-2015 Automattic, Inc.
+This theme is based on Underscores http://underscores.me/, (C) 2012-2015 Automattic, Inc.
 Underscores is distributed under the terms of the GNU GPL v2 or later.
 
 Normalizing styles have been helped along thanks to the fine work of
@@ -301,7 +301,7 @@ button,
 input,
 select,
 textarea {
-	color: #404040;
+	color: #222222;
 	font-family: "Raleway", sans-serif;
 	font-size: 16px;
 	font-size: 1.4rem;
@@ -318,8 +318,8 @@ h3,
 h4,
 h5,
 h6 {
-	/*font-family: "Raleway";*/
-	font-family: "Alegreya";
+	font-family: "Raleway";
+	/*font-family: "Alegreya";*/
 	/*font-family: "Alegreya SC";*/
 	clear: both;
 	margin: 0.87em 0;
@@ -345,8 +345,8 @@ h4, h5, h6 {
 
 p {
 	margin-bottom: 1.5em;
-	font-size: 15px;
-	color: #303030;
+	font-size: 19px;
+	color: #000000;
 	line-height: 1.65em;
 }
 
@@ -415,7 +415,6 @@ big {
 	font-family: "Raleway";
 	font-size: 35px;
 	text-align: center;
-	text-transform: uppercase;
 	font-weight: bold;
 	margin-bottom: 10px;
 }
@@ -426,9 +425,21 @@ big {
 	border: none;
 }
 
+.entry-title {
+	text-align: center;
+}
+
 .site-title a:visited {
 	text-decoration: none;
 	color: #fff;
+}
+
+#main .site-title {
+	color: #333333;
+}
+
+#main .site-description {
+color: #333333;
 }
 
 h5.entry-title{
@@ -571,15 +582,39 @@ table {
 }
 
 .posted-on {
-	color: #969696;
 	margin-bottom: 20px;
+	text-align: center;
 }
 
-.site-branding .site-avatar img {
+.frontpage-hero img {
+	border-radius: 50%;
+	padding: 5% 5%;
+	width: 100%;
+}
+
+.frontpage-hero h1 {
+	font-size: 3em;
+	color: #232323;
+}
+
+.navbar {
+	background: #2b3e50;
+	text-align: center;
+	padding: 5px;
+	margin-bottom: 0;
+}
+
+.site-branding {
+	background: #ffffed;
+	text-align: center;
+	padding: 20px;
+}
+
+.navbar img {
 	border-radius: 50%;
 	padding: 0% 5%;
-	width: 100%;
-	margin-top: 50px;
+	max-height: 100px !important;
+	width: auto;
 }
 
 .main-content {
@@ -593,6 +628,10 @@ table {
 
 
 .site-footer {
+	text-align: center;
+	color: #fff;
+	padding-top: 4px;
+	padding-bottom: 4px;
 	background: #164293;
 	background: rgba(22, 66, 147, 0.65);
 }
@@ -607,22 +646,17 @@ input[type="submit"] {
 	border: 1px solid;
 	border-color: #ccc #ccc #bbb;
 	border-radius: 3px;
-	background: #e6e6e6;
-	box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5), inset 0 15px 17px rgba(255, 255, 255, 0.5), inset 0 -5px 12px rgba(0, 0, 0, 0.05);
-	color: rgba(0, 0, 0, .8);
 	font-size: 16px !important;
 	font-size: 0.75rem;
 	line-height: 1;
 	padding: .6em 1em .4em;
-	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8);
 }
 
 button:hover,
 input[type="button"]:hover,
 input[type="reset"]:hover,
 input[type="submit"]:hover {
-	border-color: #ccc #bbb #aaa;
-	box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8), inset 0 15px 17px rgba(255, 255, 255, 0.8), inset 0 -5px 12px rgba(0, 0, 0, 0.02);
+	/*border-color: #ccc #bbb #aaa;*/
 }
 
 button:focus,
@@ -713,13 +747,10 @@ textarea {
 ## Links
 --------------------------------------------------------------*/
 a {
-	color: #484848;
 	transition: color 0.2s ease-in-out, border-color 0.2s ease-in-out;
-	border-bottom: dotted 1px;
 }
 
 a:visited {
-	color: #484848;
 }
 
 a:hover,
@@ -749,11 +780,19 @@ ul#primary-menu li a {
 }
 
 ul#primary-menu li {
-	float: none;
+	float: left;
+	font-size: 0.9em;
+	position: relative;
+	display: block;
+	right: 50%;
 }
 
 ul#primary-menu {
-	position: inherit;
+	position: relative;
+	list-style: none;
+	float: left;
+	display: block;
+	left: 50%;
 }
 
 .primary-menu {
@@ -763,6 +802,10 @@ ul#primary-menu {
 
 .primary-menu{
 	text-align: center;
+}
+
+.primary-menu a {
+	margin-right: 10px;
 }
 
 .sub-menu {
@@ -1029,7 +1072,6 @@ img.aligncenter {
 # Widgets
 --------------------------------------------------------------*/
 .widget {
-	margin: 0 0 1.5em;
 	text-align: center;
 }
 
@@ -1043,7 +1085,7 @@ img.aligncenter {
 }
 
 .widget-title {
-	color: rgba(255, 255, 255, 0.85);
+	color: rgba(255, 255, 255, 0.5);
 	font-size: 14px;
 	text-transform: uppercase;
 	font-weight: bold;
@@ -1144,7 +1186,7 @@ img.aligncenter {
 }
 
 .post {
-	padding: 5px 15px;
+	
 }
 
 article.page {
@@ -1158,15 +1200,14 @@ article.latest-post {
 p.post-separator {
 	font-size: 22px;
 	text-align: center;
-	color: #b1b1b1;
+	color: #616161;
 	margin-top: 20px;
 	margin-bottom: 20px;
 }
 
 article.frontpage-hero {
-	padding: 50px !important;
-	background: #e6e6e6;
-	margin-bottom: 100px;
+	padding: 0;
+	background: #f6f6f6;
 }
 
 /*--------------------------------------------------------------
@@ -1362,8 +1403,14 @@ object {
  --------------------------------------------------------------*/
 
 @media (min-width: 768px) {
+	
+	.navbar {
+		padding: 20px;
+	}
+	
 	.site-title {
-		font-size: 44px;
+		font-size: 40px;
+		font-weight: 200;
 	}
 	
 	ul#primary-menu li a {
@@ -1383,10 +1430,7 @@ object {
 	}
 	
 	.primary-menu{
-		float: right;
-		position: relative;
-		left: -50%;
-		text-align: left;
+		
 	}
 	
 	.post {
@@ -1395,7 +1439,7 @@ object {
 	
 	article.page {
 		padding: 20px 50px;
-		/*padding: 0;*/
+		padding: 0;
 	}
 	
 	#comments {
@@ -1413,7 +1457,7 @@ object {
 	}
 	
 	#main {
-		padding-top: 50px;
+		padding-top: 30px;
 		padding-bottom: 50px;
 	}
 
@@ -1421,11 +1465,13 @@ object {
 	.entry-title {
 		font-size: 30px;
 		margin-bottom: 15px;
+		text-align: center;
 	}
 	
 	.posted-on {
 		margin-bottom: 20px;
 		margin-top: 20px;
+		text-align: center;
 	}
 	
 	.site-content {
@@ -1446,8 +1492,9 @@ object {
 	}
 	
 	.site-title {
-		font-size: 28px;
 		text-align: center;
+		margin-bottom: 0;
+		margin-top: 4px;
 	}
 	
 	.site-description {
@@ -1461,16 +1508,15 @@ object {
 	}
 	
 	ul#primary-menu li {
-		float: none;
+		display: inline-block;
 	}
 	
 	ul#primary-menu {
-		position: inherit;
+		position: relative;
 	}
 	
 	.primary-menu {
-		position: inherit;
-		float: none;	
+		
 	}
 	
 	.site-header {
@@ -1484,6 +1530,10 @@ object {
 	.extra-content {
 		height: 100%;
 		padding-top: 50px;
+	}
+	
+	.footer-widget-container {
+		display: flex;
 	}
 	
 }
@@ -1529,3 +1579,25 @@ section #huge_it_gallery {
 }
 
 /************************/
+
+
+.content-area {
+	padding: 20px;
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 800px;
+}
+
+.navbar {
+	border-radius: 0;
+}
+
+.widget {
+	padding-left: 7px;
+	padding-right: 7px;
+}
+
+.wp-post-image {
+	margin-top: 20px;
+	margin-bottom: 50px;
+}

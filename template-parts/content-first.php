@@ -4,7 +4,7 @@
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * @package mmh_weblog
+ * @package Future_Imperfect
  */
 
 ?>
@@ -48,25 +48,20 @@
 	</article><!-- #post-## -->
 
 <?php else : ?>
-	<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+		<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+			<h2 class="entry-title"><a href="<?php esc_url( the_permalink() ); ?>" rel="bookmark"><?php echo get_post()->post_title ?></a></h2>
+			
+			<?php if ( 'post' === get_post_type() ) : ?>
+				<div class="entry-meta">
+					<?php mmh_weblog_posted_on(); ?>
+				</div><!-- .entry-meta -->
+			<?php endif; ?>
 
-		
-		
-		<h2 class="entry-title"><a href="<?php esc_url( the_permalink() ); ?>" rel="bookmark"><?php echo get_post()->post_title ?></a></h2>
-		
-		<?php if ( 'post' === get_post_type() ) : ?>
-			<div class="entry-meta">
-				<?php mmh_weblog_posted_on(); ?>
-			</div><!-- .entry-meta -->
-		<?php endif; ?>
-
-		<?php
-			the_post_thumbnail();
-		?>
-
-		<?php the_excerpt(); ?>
-
-	</article>
+			<?php
+				the_post_thumbnail();
+				the_content(); 
+			?>
+		</article>
 
 <?php endif; // is_single() ?>
 

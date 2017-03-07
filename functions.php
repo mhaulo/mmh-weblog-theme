@@ -1,13 +1,13 @@
 <?php
 /**
- * Future Imperfect functions and definitions.
+ * Theme functions and definitions.
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
- * @package Future_Imperfect
+ * @package mmh_weblog
  */
 
-if ( ! function_exists( 'future_imperfect_setup' ) ) :
+if ( ! function_exists( 'mmh_weblog_setup' ) ) :
 /**
  * Sets up theme defaults and registers support for various WordPress features.
  *
@@ -15,14 +15,14 @@ if ( ! function_exists( 'future_imperfect_setup' ) ) :
  * runs before the init hook. The init hook is too late for some features, such
  * as indicating support for post thumbnails.
  */
-function future_imperfect_setup() {
+function mmh_weblog_setup() {
 	/*
 	 * Make theme available for translation.
 	 * Translations can be filed in the /languages/ directory.
 	 * If you're building a theme based on Future Imperfect, use a find and replace
-	 * to change 'future-imperfect' to the name of your theme in all the template files.
+	 * to change 'mmh-weblog' to the name of your theme in all the template files.
 	 */
-	load_theme_textdomain( 'future-imperfect', get_template_directory() . '/languages' );
+	load_theme_textdomain( 'mmh-weblog', get_template_directory() . '/languages' );
 
 	// Add default posts and comments RSS feed links to head.
 	add_theme_support( 'automatic-feed-links' );
@@ -45,7 +45,7 @@ function future_imperfect_setup() {
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
-		'primary' => esc_html__( 'Primary', 'future-imperfect' ),
+		'primary' => esc_html__( 'Primary', 'mmh-weblog' ),
 	) );
 
 	/*
@@ -74,13 +74,13 @@ function future_imperfect_setup() {
 	) );
 
 	// Set up the WordPress core custom background feature.
-	add_theme_support( 'custom-background', apply_filters( 'future_imperfect_custom_background_args', array(
+	add_theme_support( 'custom-background', apply_filters( 'mmh_weblog_custom_background_args', array(
 		'default-color' => '1c1c1c',
 		'default-image' => '%1$s/bg.jpg',
 	) ) );
 }
 endif;
-add_action( 'after_setup_theme', 'future_imperfect_setup' );
+add_action( 'after_setup_theme', 'mmh_weblog_setup' );
 
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
@@ -89,19 +89,19 @@ add_action( 'after_setup_theme', 'future_imperfect_setup' );
  *
  * @global int $content_width
  */
-function future_imperfect_content_width() {
-	$GLOBALS['content_width'] = apply_filters( 'future_imperfect_content_width', 640 );
+function mmh_weblog_content_width() {
+	$GLOBALS['content_width'] = apply_filters( 'mmh_weblog_content_width', 640 );
 }
-add_action( 'after_setup_theme', 'future_imperfect_content_width', 0 );
+add_action( 'after_setup_theme', 'mmh_weblog_content_width', 0 );
 
 /**
  * Register widget area.
  *
  * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
  */
-function future_imperfect_widgets_init() {
+function mmh_weblog_widgets_init() {
 	register_sidebar( array(
-		'name'          => esc_html__( 'Sidebar', 'future-imperfect' ),
+		'name'          => esc_html__( 'Frontpage Sidebar 1', 'mmh-weblog' ),
 		'id'            => 'sidebar-1',
 		'description'   => '',
 		'class'         => 'row',
@@ -110,9 +110,64 @@ function future_imperfect_widgets_init() {
 		'before_title'  => '<h2 class="widget-title">',
 		'after_title'   => '</h2>',
 	) );
+	
+	register_sidebar( array(
+		'name'          => esc_html__( 'Frontpage Sidebar 2', 'mmh-weblog' ),
+		'id'            => 'sidebar-2',
+		'description'   => '',
+		'class'         => 'row',
+		'before_widget' => '<section id="%1$s" class="col-xs-12 col-md-12 widget %2$s">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
+	) );
+	
+	register_sidebar( array(
+		'name'          => esc_html__( 'Top Bar 1', 'mmh-weblog' ),
+		'id'            => 'topbar-1',
+		'description'   => '',
+		'class'         => '',
+		'before_widget' => '<div id="%1$s" class="col-xs-2 col-sm-1 col-xs-offset-2 col-sm-offset-4 widget %2$s">',
+		'after_widget'  => '</div>',
+		'before_title'  => '',
+		'after_title'   => '',
+	) );
+	
+	register_sidebar( array(
+		'name'          => esc_html__( 'Top Bar 2', 'mmh-weblog' ),
+		'id'            => 'topbar-2',
+		'description'   => '',
+		'class'         => '',
+		'before_widget' => '<div id="%1$s" class="col-xs-2 col-sm-1 widget %2$s">',
+		'after_widget'  => '</div>',
+		'before_title'  => '',
+		'after_title'   => '',
+	) );
+	
+	register_sidebar( array(
+		'name'          => esc_html__( 'Top Bar 3', 'mmh-weblog' ),
+		'id'            => 'topbar-3',
+		'description'   => '',
+		'class'         => '',
+		'before_widget' => '<div id="%1$s" class="col-xs-2 col-sm-1 widget %2$s">',
+		'after_widget'  => '</div>',
+		'before_title'  => '',
+		'after_title'   => '',
+	) );
+	
+	register_sidebar( array(
+		'name'          => esc_html__( 'Top Bar 4', 'mmh-weblog' ),
+		'id'            => 'topbar-4',
+		'description'   => '',
+		'class'         => '',
+		'before_widget' => '<div id="%1$s" class="col-xs-2 col-sm-1 widget %2$s">',
+		'after_widget'  => '</div>',
+		'before_title'  => '',
+		'after_title'   => '',
+	) );
 
 	register_sidebar( array(
-	 	'name'          => esc_html__( 'Blog sidebar', 'future-imperfect' ),
+	 	'name'          => esc_html__( 'Blog sidebar', 'mmh-weblog' ),
 		'id'            => 'blog-sidebar',
 		'description'   => 'Appears on blog pages and archives',
 		'class'         => 'row',
@@ -123,7 +178,7 @@ function future_imperfect_widgets_init() {
 	) );
 	
 	register_sidebar( array(
-		'name'          => esc_html__( 'Footer 1', 'future-imperfect' ),
+		'name'          => esc_html__( 'Footer 1', 'mmh-weblog' ),
 		'id'            => 'footer-1',
 		'description'   => '',
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
@@ -133,7 +188,7 @@ function future_imperfect_widgets_init() {
 	) );
 	
 	register_sidebar( array(
-		'name'          => esc_html__( 'Footer 2', 'future-imperfect' ),
+		'name'          => esc_html__( 'Footer 2', 'mmh-weblog' ),
 		'id'            => 'footer-2',
 		'description'   => '',
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
@@ -143,7 +198,7 @@ function future_imperfect_widgets_init() {
 	) );
 	
 	register_sidebar( array(
-		'name'          => esc_html__( 'Footer 3', 'future-imperfect' ),
+		'name'          => esc_html__( 'Footer 3', 'mmh-weblog' ),
 		'id'            => 'footer-3',
 		'description'   => '',
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
@@ -154,23 +209,23 @@ function future_imperfect_widgets_init() {
 	
 	
 }
-add_action( 'widgets_init', 'future_imperfect_widgets_init' );
+add_action( 'widgets_init', 'mmh_weblog_widgets_init' );
 
 /**
  * Enqueue scripts and styles.
  */
-function future_imperfect_scripts() {
-	wp_enqueue_style( 'future-imperfect-style', get_stylesheet_uri() );
+function mmh_weblog_scripts() {
+	wp_enqueue_style( 'mmh-weblog-style', get_stylesheet_uri() );
 
-	wp_enqueue_script( 'future-imperfect-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
+	wp_enqueue_script( 'mmh-weblog-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
 
-	wp_enqueue_script( 'future-imperfect-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
+	wp_enqueue_script( 'mmh-weblog-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
 }
-add_action( 'wp_enqueue_scripts', 'future_imperfect_scripts' );
+add_action( 'wp_enqueue_scripts', 'mmh_weblog_scripts' );
 
 /**
  * Implement the Custom Header feature.
@@ -237,4 +292,33 @@ function change_custom_background_cb() {
 }
 
 add_custom_background('change_custom_background_cb');
+
+function custom_excerpt_length( $length ) {
+	return 20;
+}
+add_filter( ‘excerpt_length’, ‘custom_excerpt_length’, 999 );
+
+
+function wp_nav_menu_no_ul()
+{
+    $options = array(
+        'echo' => false,
+        'container' => false,
+        'theme_location' => 'primary',
+        'fallback_cb'=> 'fall_back_menu'
+    );
+
+    $menu = wp_nav_menu($options);
+    
+    
+    echo preg_replace(array(
+        '#^<li[^>]*>#',
+        '#</li>$#'
+    ), '', $menu);
+
+}
+
+function fall_back_menu(){
+    return;
+}
 

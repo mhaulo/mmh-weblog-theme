@@ -4,30 +4,31 @@
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * @package Future_Imperfect
+ * @package mmh_weblog
  */
 
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class('frontpage-hero'); ?>>
-	<header class="entry-header">
-		<?php the_post_thumbnail(); ?>
-		<?php the_title( '<h1 class="entry-title" style="font-size: 3em;">', '</h1>' ); ?>
-	</header><!-- .entry-header -->
-
-	<div class="entry-content"> 
-		<?php
-			the_content();
-
-			wp_link_pages( array(
-				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'future-imperfect' ),
-				'after'  => '</div>',
-			) );
-		?>
-	</div><!-- .entry-content -->
-
-	<footer class="entry-footer">
-		<?php
-			?>
-	</footer><!-- .entry-footer -->
+	<div class="row" style="margin:0;">
+		<div class="col-xs-12 site-branding">
+			<div class="row" style="margin:0;">
+				<div class="col-xs-12 col-sm-5">
+					<?php the_post_thumbnail('full', ['class' => 'site-avatar']); ?>
+				</div>
+				
+				<div class="col-xs-12 col-sm-7 content-area">
+					<h1><?php the_title(); ?></h1>
+					<strong><?php the_excerpt(); ?></strong>
+				</div>
+			</div>
+		</div>
+			
+		<div class="col-xs-12">
+			<div class="content-area">
+				<?php the_content(); ?>
+			</div>
+		</div>
+		
+	</div>	
 </article><!-- #post-## -->

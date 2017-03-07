@@ -9,65 +9,54 @@
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * @package Future_Imperfect
+ * @package mmh_weblog
  */
 
 get_header(); ?>
-	<div class="col-xs-12 col-lg-9 small-padding main-content">
-		<div class="row">
-			<div class="col-xs-12 col-lg-9">
-				<div id="content" class="site-content">
-					<div id="primary" class="content-area">
-						<main id="main" class="site-main" role="main">
+	
+<?php get_template_part( 'template-parts/navigation' ); ?>
+
+<?php get_template_part( 'template-parts/site-branding' ); ?>
+
+<div id="primary" class="content-area">
+	<main id="main" class="site-main" role="main">
+		
+		
+	<?php
+	if ( have_posts() ) :
+
+		if ( is_home() && ! is_front_page() ) : ?>
+			<header>
+				<h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
+			</header>
 
 		<?php
-		if ( have_posts() ) :
+		endif;
 
-			if ( is_home() && ! is_front_page() ) : ?>
-				<header>
-					<h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
-				</header>
+		$post_index = 0;
 
-			<?php
-			endif;
-
-			$post_index = 0;
-
-			while ( have_posts() ) : the_post();
+		while ( have_posts() ) : the_post();
+			if ( $post_index == 0 && get_post_format() == "") {
+				get_template_part( 'template-parts/content-first' );
+			}
+			else {
 				get_template_part( 'template-parts/content', get_post_format() );
-				echo '<p class="post-separator"><i class="fa fa-ellipsis-h"></i></p>';
+			}
+			
+			echo '<p class="post-separator"><i class="fa fa-ellipsis-h"></i></p>';
+			if (!is_sticky())
+				$post_index++; 
 
-				if (!is_sticky())
-					$post_index++; 
+		endwhile;
 
-			endwhile;
+		the_posts_navigation();
 
-			the_posts_navigation();
+	else :
+		get_template_part( 'template-parts/content', 'none' );
+	endif; ?>
 
-		else :
-
-			get_template_part( 'template-parts/content', 'none' );
-
-		endif; ?>
-
-						</main><!-- #main -->
-					</div><!-- #primary -->
-
-				</div><!-- #content -->
-
-			</div> <!-- col -->
-
-
-			<div class="col-xs-12 col-lg-3 extra-content">
-<?php 
-		if ( is_user_logged_in() ) {
-			dynamic_sidebar('blog-sidebar'); 
-		}
-?>
-			</div>
-		</div>
-	</div>
-</div>
+	</main><!-- #main -->
+</div><!-- #primary -->
 
 <?php
 
