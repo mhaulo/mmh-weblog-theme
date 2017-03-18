@@ -20,7 +20,7 @@
 					<?php mmh_weblog_posted_on(); ?>
 				</div><!-- .entry-meta -->
 
-				<?php the_title( '<h4>', '</h4>' ); ?>
+				<?php the_title( '<h2 class="entry-title">', '</h2>' ); ?>
 				<?php the_post_thumbnail(); ?>
 
 			<?php endif; ?>
