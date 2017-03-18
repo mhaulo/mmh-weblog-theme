@@ -22,7 +22,7 @@ get_header(); ?>
 				<main id="main" class="site-main" role="main">
 
 					<?php
-						get_template_part( 'template-parts/content-first' );			
+						get_template_part( 'template-parts/content', get_post_format() );
 						echo '<p class="post-separator"><i class="fa fa-ellipsis-h"></i></p>';
 						
 						// If comments are open or we have at least one comment, load up the comment template.
