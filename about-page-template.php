@@ -20,7 +20,7 @@ get_header(); ?>
 
 		<?php
 			while ( have_posts() ) : the_post();
-				get_template_part( 'template-parts/content', 'etusivu' );
+				get_template_part( 'template-parts/content', 'aboutpage' );
 			endwhile; // End of the loop.
 		?>
 		
@@ -28,13 +28,6 @@ get_header(); ?>
 			<div class="col-xs-12 col-md-6" style="background: #d7e9f3; color: #000; padding: 50px;">
 				<?php
 					dynamic_sidebar("footer-1");
-					
-					/*$args = array('post-type' => 'post', 'posts_per_page' => 3);
-					$blog_query = new WP_Query( $args );
-					
-					while ( $blog_query->have_posts() ) : $blog_query->the_post();
-						get_template_part( 'template-parts/content', 'frontpage-post' );
-					endwhile; // End of the loop.*/
 				?>
 
 				<p class="text-center"><small>Lisää postauksia <a href="/blogi">blogiarkistossa</a>.</small></p>
