@@ -429,6 +429,7 @@ big {
 
 .entry-title {
 	text-align: center;
+	line-height: 1.3em;
 }
 
 .site-title a:visited {
@@ -493,6 +494,16 @@ h5.entry-title a:hover {
 	color: #3a3a3a;
 }
 
+.post-meta {
+	font-size: 17px;
+	font-style: italic;
+	color: #434343;
+}
+
+ul.post-meta {
+	list-style: none;
+	padding: 0;
+}
 
 /*--------------------------------------------------------------
 # Elements
@@ -581,6 +592,7 @@ table {
 
 .entry-meta {
 	color: #6f6f6f;
+	font-size: 18px;
 }
 
 .posted-on {
@@ -1189,6 +1201,10 @@ img.aligncenter {
 	text-decoration: none;
 }
 
+.entry-title time {
+	font-size: 18px;
+}
+
 .post {
 	
 }
@@ -1222,7 +1238,7 @@ article.frontpage-hero {
 	/*display: none;*/
 }
 
-.blog .format-aside .entry-title,
+.format-aside .entry-title,
 .archive .format-aside .entry-title {
         color: #3a3a3a;
         font-size: 18px;
@@ -1254,10 +1270,10 @@ article.frontpage-hero {
 	/*display: none;*/
 }
 
-.blog .format-status .entry-title,
+.format-status .entry-title,
 .archive .format-status .entry-title {
         color: #3a3a3a;
-        font-size: 18px;
+        font-size: 25px;
 }
 
 .blog .format-status .entry-title a,
